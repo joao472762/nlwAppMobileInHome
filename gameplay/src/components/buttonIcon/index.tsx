@@ -7,7 +7,7 @@ import { styles } from "./style";
 type buttonProps = TouchableOpacityProps &{
     title:  string
 }
-
+ 
 export function ButtonIcon({title,...res}:buttonProps){
     return(
     

@@ -9,10 +9,6 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
-        backgroundColor: theme.colors.secondary90,
-        
-    
-        
     },
     image:{
         height: 360
@@ -23,6 +19,7 @@ export const styles = StyleSheet.create({
         paddingVertical: 10,
     },
     title: {
+        fontFamily: theme.fonts.title700,
         lineHeight: 40,
         textAlign: 'center',
         color: 'white',
