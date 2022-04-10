@@ -9,7 +9,8 @@ export const styles  = StyleSheet.create({
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingHorizontal: getStatusBarHeight() + 24, 
+        paddingHorizontal: 24,
+        marginTop: getStatusBarHeight() + 26, 
         marginBottom: 46,
     },
     headerTitle:{

@@ -8,6 +8,7 @@ import { Rajdhani_400Regular,Rajdhani_500Medium,Rajdhani_600SemiBold,Rajdhani_70
 
 import { Background } from './src/components/background';
 import { Home } from './src/screens/home';
+import { Signin } from './src/screens/signIn';
 
 
 export default function App() {
