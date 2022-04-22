@@ -8,7 +8,7 @@ import { Rajdhani_400Regular,Rajdhani_500Medium,Rajdhani_600SemiBold,Rajdhani_70
 
 import { Background } from './src/components/background';
 import { Home } from './src/screens/home';
-import { Signin } from './src/screens/signIn';
+import { Routes } from './src/routes';
 
 
 export default function App() {
@@ -28,16 +28,16 @@ export default function App() {
 
 
   return (
-    <Background>
+    <>
        <StatusBar
             barStyle={"light-content"}
             backgroundColor = 'transparent'
             translucent
             />
       
-        <Home/>
+        <Routes/>
    
-    </Background>
+    </>
   );
 }
 
