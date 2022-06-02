@@ -8,9 +8,7 @@ import { Background } from "../components/background";
 export function  Routes(){
     return(
         <NavigationContainer>
-            <Background>
-                <AuthRoutes/>
-            </Background>
+            <AuthRoutes/>
         </NavigationContainer>
     )
 }

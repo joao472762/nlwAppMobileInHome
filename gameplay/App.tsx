@@ -9,6 +9,7 @@ import { Rajdhani_400Regular,Rajdhani_500Medium,Rajdhani_600SemiBold,Rajdhani_70
 import { Background } from './src/components/background';
 import { Home } from './src/screens/home';
 import { Routes } from './src/routes';
+import { Signin } from './src/screens/signIn';
 
 
 export default function App() {
@@ -34,7 +35,7 @@ export default function App() {
             backgroundColor = 'transparent'
             translucent
             />
-      
+       
         <Routes/>
    
     </>
