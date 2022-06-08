@@ -1,17 +1,23 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 
 import { styles } from './styles';
 
-export function HeaderList() {
+type headerListProps = {
+  title: string,
+  subTitle: string,
+}
+export function HeaderList(
+  {title,subTitle}: headerListProps
+) {
   return (
     <View style={styles.container}>
-        <View style={styles.title}>
-            Partidada Agendada
-        </View>
-        <View style={styles.subTitle}>
-            total 8
-        </View>
+      <Text style={styles.title}>
+        {title}
+      </Text>
+      <Text style={styles.subTitle}>
+        {subTitle}
+      </Text>
     </View>
   );
 }

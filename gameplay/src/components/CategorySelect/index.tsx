@@ -20,7 +20,7 @@ export function CategorySelect(
         showsHorizontalScrollIndicator = {false}
         style= {styles.container}
         contentContainerStyle={{
-            paddingRight: 40
+            paddingRight: 35
         }}
         >
             {
