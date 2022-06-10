@@ -3,8 +3,8 @@ export declare global {
         interface RootParamList{
             Home: undefined,
             SignIn: undefined,
-            Register: undefined
-
+            AppointmentDetail: undefined,
+            AppointmentCreate: undefined,
             }
         }
 }

@@ -1,18 +1,20 @@
 import React from 'react'
+import { styles } from './style'
 import { View, Text } from 'react-native'
 import { SvgProps } from 'react-native-svg'
-import { styles } from './style'
 import {RectButtonProps, RectButton} from "react-native-gesture-handler"
+
 import { GuildIcon } from '../GuildIcon'
-import {MaterialCommunityIcons} from '@expo/vector-icons'
-import { theme } from '../../global/styles/theme'
 import { categories } from '../../utils'
 import PlayerSvg from  '../../assets/player.svg' 
+import { theme } from '../../global/styles/theme'
+import CalendarSvg from '../../assets/calendar.svg' 
 
-type appointmentsGuildProps = {
+export type appointmentsGuildProps = {
+    id: string 
     name: string,
-    //icon?: React.FC<SvgProps>,
-    owner: true
+    icon?: string
+    owner: boolean
 }
 export type appointmentsProps = {
     id: string,
@@ -27,7 +29,7 @@ type localProps = RectButtonProps & {
 }
 
 export function Appointments({data,...props}:localProps){
-    const {
+    const { 
         guild,
         category,
         description,
@@ -35,6 +37,7 @@ export function Appointments({data,...props}:localProps){
     const {owner} = guild
     const {primary,on} = theme.colors
     const [categoryAcutally] = categories.filter(item => item.id === data.category)
+    
     return(
         <RectButton 
         {...props}
@@ -49,30 +52,32 @@ export function Appointments({data,...props}:localProps){
                             {guild.name}
                         </Text>
                         <Text style={styles.subTitle}>
-                            {
-                                owner? 'Anfitrião':'Covidado'
-                            }
+                            Ranqueada
                         </Text>
                     </View>
 
-                    <Text style={styles.subTitle}>
-                        {categoryAcutally.title}
-                    </Text>
-                    <View style={styles.playersInfo}>
-                        <View style={styles.calendar}>
-                            <MaterialCommunityIcons
-                            name='calendar-month'
-                            size={16}
-                            color={theme.colors.primary}
-                            />
-                            <Text style={styles.date}
-                            >
+                    <View style={styles.footer}>
+                        <View style={styles.dateInfo}>
+                            <CalendarSvg/>
+                            <Text style={styles.date}>
                                 {date}
-                        </Text>
+                             </Text>
                         </View>
-                        <PlayerSvg
-                        fill={owner ? on : theme.colors.primary}
-                        />
+                        <View style={styles.playersInfo}>
+                            <PlayerSvg
+                            fill={!owner ? on : theme.colors.primary}
+                            />
+                            <Text 
+                             style={[
+                                   styles.status,
+                                   !owner? {color: on}:{color:primary} 
+                                 ]}>
+                                      {
+                                          owner? 'Anfitrião':'Covidado'
+                                     }
+                            </Text>
+                        </View>
+
                     </View>
                 </View>
             </View>

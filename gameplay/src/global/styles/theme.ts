@@ -11,8 +11,8 @@ export const theme = {
       secondary50: '#243189', 
       secondary40: '#1D2766', 
       secondary30: '#495BCC', 
-     
       overlay: 'rgba(0,0,0,0.7)',
+      occupied: '#D07622',
       highlight: '#ABB1CC',
       heading: '#DDE3F0',
       line: '#991F36',

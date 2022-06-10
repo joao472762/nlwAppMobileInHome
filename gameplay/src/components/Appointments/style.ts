@@ -3,20 +3,19 @@ import { theme } from "../../global/styles/theme";
 
 export const styles = StyleSheet.create({
     container:{
+        width: '100%',
         flexDirection: 'row',
-        marginTop: 24,
-        alignItems: 'center'
-    
-
+        alignItems: 'center',
+        paddingRight: 20,
+ 
     },
     content:{
-        width: '80%',
+        flex: 1
     },
     header:{
      
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingRight: 24,
         marginBottom: 4
     },
     title:{
@@ -30,12 +29,20 @@ export const styles = StyleSheet.create({
         color: theme.colors.highlight
     },
     playersInfo:{
+        alignItems: 'center',
         marginTop: 8, 
         flexDirection: 'row',
         justifyContent: 'space-between'
       
     },
-    calendar:{
+    footer:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        
+    },
+    dateInfo:{
+        alignItems: 'center',
         flexDirection: 'row',
         
     },
@@ -44,5 +51,11 @@ export const styles = StyleSheet.create({
         fontSize: 13,
         color: theme.colors.heading,
         marginLeft: 12
+    },
+    status:{
+        fontFamily: theme.fonts.text400,
+        fontSize: 13,
+        marginLeft: 7
+    
     }
 })

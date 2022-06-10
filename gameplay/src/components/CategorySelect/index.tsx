@@ -1,17 +1,18 @@
 import React from "react";
 import { ScrollView} from "react-native";
 
-import { categories } from "../../utils";
-import { Category } from "../Category";
 import { styles } from "./style";
+import { Category } from "../Category";
+import { categories } from "../../utils";
 
 type categorySelectProps = {
+    hasCheckbox?: boolean
     categorySelected: string,
     setCategory: (categoryId:string) => void
 }
 
 export function CategorySelect(
-    {categorySelected,setCategory}:categorySelectProps
+    {categorySelected,setCategory, hasCheckbox = false}:categorySelectProps
 ){
     return(
         <ScrollView
@@ -26,6 +27,7 @@ export function CategorySelect(
             {
                 categories.map(category=>(
                     <Category
+                    hasCheckbox = {hasCheckbox}
                     key={category.id}
                     title = {category.title}
                     icon= {category.icon}

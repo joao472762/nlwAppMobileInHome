@@ -1,8 +1,9 @@
-import React, { ReactNode } from "react";
 import {  Image } from "react-native";
+import React, { ReactNode } from "react";
 import { LinearGradient } from "expo-linear-gradient";
-import { theme } from "../../global/styles/theme";
+
 import { styles } from "./style";
+import { theme } from "../../global/styles/theme";
 
 interface avatarProps {
     imageUrl: string

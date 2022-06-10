@@ -5,37 +5,23 @@ import { theme } from "../../global/styles/theme";
 
 export const styles = StyleSheet.create({
     content: {
-        width:'100%',
+        width:'99%',
         height: 56,
         backgroundColor: theme.colors.primary,
         flexDirection: 'row',
         borderRadius: 8,
         alignItems: 'center',
-        marginTop: 46,
+       
         marginBottom: 30
         
   
     },
-    iconWrapper:{
-        width: 56,
-        height: 56,
-        borderRightWidth: 1,
-        borderRightColor: theme.colors.line,
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    icon:{
-        width: 24,
-        height: 18,
-    },
-
     title: {
-        marginRight: 26,
         flex: 1,
         color: theme.colors.heading,
         fontSize: 15,
         textAlign: "center",
-        fontFamily: theme.fonts.text500
+        fontFamily: theme.fonts.text500 
     },
     
 })
