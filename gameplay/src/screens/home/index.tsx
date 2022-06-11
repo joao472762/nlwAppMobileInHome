@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
+import { FlatList,  View} from "react-native";               
+import { useNavigation } from "@react-navigation/native";
 
 import { styles } from "./style";
-import { FlatList, Text, View} from "react-native";
 import { Profile } from "../../components/Profile";
 import { AddButton } from "../../components/AddButton";
 import { HeaderList } from "../../components/HeaderList";
 import { ListDivider } from "../../components/ListDivider";
 import { Appointments } from "../../components/Appointments";
 import { CategorySelect } from "../../components/CategorySelect";
-import { useNavigation } from "@react-navigation/native";
+
 
 export function Home(){
     const [category,setCategory] = useState('')
@@ -41,6 +42,20 @@ export function Home(){
             date: '22/06 ás 18:22h',
             description: 'é hoje que nós vamos chegar ao challenge sem pereder uma da m10'
         },
+        {
+            id: '3',
+            guild:{
+                id: '1',
+                name: 'Lendários',
+               // icon: null,
+                owner: true
+
+            },
+            category: '4',
+            date: '22/06 ás 18:22h',
+            description: 'é hoje que nós vamos chegar ao challenge sem pereder uma da m10'
+        },
+      
     ]
 
     function handleSelectCategory(categoryId: string){
@@ -53,7 +68,7 @@ export function Home(){
         Navegation.navigate("AppointmentCreate")
     }
     return(
-        <View>
+        <View style={styles.container}>
             <View style={styles.header}>
                 <Profile/>
                 <AddButton
@@ -61,31 +76,32 @@ export function Home(){
                 />
             </View>
             <CategorySelect
-            hasCheckbox= {true}
             categorySelected = {category}
             setCategory = {handleSelectCategory}
             />
-            <View style={styles.content}>
-                <HeaderList
-                title="Partidas Agendadas"
-                subTitle="Total 6"
-                />
-                <FlatList
-                data={appointments}
-                keyExtractor= {item => item.id}
-                style={styles.matches}
-                renderItem = {
-                    ({item})=>(
-                       <Appointments
-                       data={item}
-                       onPress={handleAppoimentDetails}
-                       />     
-                    )
-                }
-                ItemSeparatorComponent = {()=> <ListDivider/>}
-                showsHorizontalScrollIndicator={false}
-                />
-            </View>
+             
+            <HeaderList
+            title="Partidas Agendadas"
+            subTitle="Total 6"
+            />
+
+            <FlatList
+            data={appointments}
+            keyExtractor= {item => item.id}
+            renderItem = {
+                ({item})=>(
+                    <Appointments
+                    data={item}
+                    onPress={handleAppoimentDetails}
+                    />     
+                )
+            }
+            style={styles.matches}
+
+            contentContainerStyle={{paddingBottom: 69,}}
+            ItemSeparatorComponent = {()=> <ListDivider/>}
+      
+            />
         </View>
         
     );

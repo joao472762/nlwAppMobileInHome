@@ -20,7 +20,6 @@ export const styles =  StyleSheet.create({
     },
     title:{
     
-        marginLeft: 0,
         flex: 1,
         textAlign: 'center',
         color: theme.colors.heading,

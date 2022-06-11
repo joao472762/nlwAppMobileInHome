@@ -1,6 +1,6 @@
 import React from "react"
 import {View, FlatList, Text} from "react-native"
-import { ListDivider } from "../../components/ListDivider"
+import { ListDivider} from "../../components/ListDivider"
 
 import {styles} from "./style"
 import { Guild } from "../../components/Guild"
@@ -8,7 +8,8 @@ import { GuildProps } from "../../components/Guild";
 
 
 type Props = {
-    handleGuilSelected: (guild:GuildProps) => void
+    handleGuilSelected: (guild:GuildProps) => void,
+
 }
 
 const guild = [
@@ -24,6 +25,38 @@ const guild = [
         icon: 's',
         owner: true
     },
+    {
+        id: '3',
+        name: 'joga bonito',
+        icon: 'image.png',
+        owner: true
+    },
+    {
+        id: '4',
+        name: 'chama',
+        icon: 's',
+        owner: true
+    },
+    {
+        id: '5',
+        name: 'joga bonito',
+        icon: 'image.png',
+        owner: true
+    },
+    {
+        id: '6',
+        name: 'chama',
+        icon: 's',
+        owner: true
+    },
+    {
+        id: '7',
+        name: 'joga bonito',
+        icon: 'image.png',
+        owner: true
+    },
+
+  
 ]
 export function Guilds({handleGuilSelected}:Props){
     return(
@@ -40,6 +73,10 @@ export function Guilds({handleGuilSelected}:Props){
                     
                 )
             }
+            contentContainerStyle={{
+                paddingBottom: 68,
+                paddingTop: 104
+            }}
             style={styles.guilds}
             showsVerticalScrollIndicator= {false}
             ItemSeparatorComponent= {()=> <ListDivider/>}

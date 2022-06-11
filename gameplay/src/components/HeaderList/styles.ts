@@ -3,6 +3,7 @@ import { theme } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
   container: {
+    marginTop: 27,
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',

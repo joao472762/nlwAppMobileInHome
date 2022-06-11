@@ -7,9 +7,8 @@ import { Inter_400Regular,Inter_500Medium } from '@expo-google-fonts/inter';
 import { Rajdhani_400Regular,Rajdhani_500Medium,Rajdhani_600SemiBold,Rajdhani_700Bold } from '@expo-google-fonts/rajdhani';
 
 import { Background } from './src/components/background';
-import { Home } from './src/screens/Home';
 import { Routes } from './src/routes';
-import { Signin } from './src/screens/SignIn';
+import { AuthProvider } from './src/hooks/auth';
 
 
 export default function App() {
@@ -37,7 +36,11 @@ export default function App() {
             backgroundColor = 'transparent'
             translucent
             />
-        <Routes/>
+          <AuthProvider>
+             <Routes/>
+          </AuthProvider>
+ 
+        
     </Background>
    
    

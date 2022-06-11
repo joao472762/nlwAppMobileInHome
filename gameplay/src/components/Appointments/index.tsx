@@ -9,6 +9,7 @@ import { categories } from '../../utils'
 import PlayerSvg from  '../../assets/player.svg' 
 import { theme } from '../../global/styles/theme'
 import CalendarSvg from '../../assets/calendar.svg' 
+import { GuildProps } from '../Guild'
 
 export type appointmentsGuildProps = {
     id: string 
@@ -18,7 +19,7 @@ export type appointmentsGuildProps = {
 }
 export type appointmentsProps = {
     id: string,
-    guild: appointmentsGuildProps,
+    guild: GuildProps
     category:  string,
     date: string,
     description: string,
@@ -43,7 +44,7 @@ export function Appointments({data,...props}:localProps){
         {...props}
         >
             <View style={styles.container}>
-
+                
                 <GuildIcon
                 />
                 <View style={styles.content}>

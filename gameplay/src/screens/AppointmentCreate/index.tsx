@@ -18,28 +18,37 @@ import { GuildProps } from "../../components/Guild";
 import { GuildIcon } from "../../components/GuildIcon";
 
 export function AppointmentCreate(){
+
     const  [category, setCategory] = useState('')
     const [openGuildModal, setOnpenGuidlModal] = useState(false)
     const [guild,setGuild] = useState<GuildProps>({} as GuildProps)
+
     function handleOnpenGuilds(){
-       
         setOnpenGuidlModal(true)
     }
+
+    function handleCloseGuilds(){
+        setOnpenGuidlModal(false)
+    }
+
     function handleGuilSelected(guildSelect:GuildProps){
         setGuild(guildSelect)
         setOnpenGuidlModal(false)
     }
 
     function handleSelectCategory(categoryId: string){
-        category === categoryId ? setCategory(''): setCategory(categoryId)
+         setCategory(categoryId)
     }
+
     const {secondary85,secondary50, heading} = theme.colors
     return(
        
         <KeyboardAvoidingView
         behavior= {Platform.OS === 'ios' ? 'padding' :'height'}
         >
-            <ScrollView>
+            <ScrollView
+            
+            >
                 <View style={styles.container}>
                     <Header
                     title="Agendar Partida"
@@ -131,7 +140,10 @@ export function AppointmentCreate(){
                     </View> 
                 </View>
             </ScrollView>
-            <ModalView visible={openGuildModal}>
+            <ModalView 
+            visible={openGuildModal}
+            closeModal= {handleCloseGuilds}
+            >
                 <Guilds handleGuilSelected={handleGuilSelected}/>
             </ModalView>
         </KeyboardAvoidingView>

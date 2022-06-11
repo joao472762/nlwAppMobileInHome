@@ -3,12 +3,14 @@ import { theme } from "../../global/styles/theme";
 
 export const styles = StyleSheet.create({
     container:{
+        flex: 1,
         width: '100%',
         flexDirection: 'row',
         alignItems: 'center',
         paddingRight: 20,
  
     },
+
     content:{
         flex: 1
     },

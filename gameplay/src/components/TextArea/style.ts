@@ -24,13 +24,15 @@ export const styles  = StyleSheet.create({
       },
     input:{
         height: 95,
-        backgroundColor: theme.colors.secondary50,
+        backgroundColor: theme.colors.secondary40,
         borderRadius: 8,
+        borderWidth: 1,
+        borderColor: theme.colors.secondary50,
         fontFamily: theme.fonts.text400,
         color: theme.colors.heading,
         fontSize: 13,
         marginRight: 4,
         textAlignVertical: 'top',
-        padding: 20,
+        padding: 16,
     }
 })

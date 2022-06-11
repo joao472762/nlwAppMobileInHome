@@ -39,10 +39,13 @@ export function Header({title,action}: headerProps){
                     {title}
                 </Text>
                 {
-                    action && 
+                    action
+                    ? 
                     <View>
-                        {action}
+                      {action}
                     </View>
+                    : 
+                    <View style={{width: 24}}/>
                 }
              </View>
         </LinearGradient>

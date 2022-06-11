@@ -3,9 +3,9 @@ import { theme } from "../../global/styles/theme";
 
 export const styles  = StyleSheet.create({
     container:{
-        width: 48,
+         width: 48,
         height: 48,
-        backgroundColor: theme.colors.secondary50,
+        backgroundColor: theme.colors.secondary40,
         borderRadius: 8,
         fontFamily: theme.fonts.text400,
         color: theme.colors.heading,
